@@ -12,10 +12,34 @@
         <?php
             if(isset($_GET['error'])){
                 $error = $_GET['error'];
-                $nombre = $_GET['nombre'];
                 if($error == 'faltan valores'){
-                    echo $nombre;
+                    
                     echo '<stong style="color:red">Introduce todos los datos del formulario</strong>';
+                }
+
+                if($error == 'nombre'){
+                    
+                    echo '<stong style="color:red">Introduce un nombre valido</strong>';
+                }
+
+                if($error == 'apellidos'){
+                    
+                    echo '<stong style="color:red">Introduce apellidos validos</strong>';
+                }
+
+                if($error == 'edad'){
+                    
+                    echo '<stong style="color:red">Introduce una edad correcta</strong>';
+                }
+
+                if($error == 'email'){
+                    
+                    echo '<stong style="color:red">Introduce un email correcto</strong>';
+                }
+
+                if($error == 'password'){
+                    
+                    echo '<stong style="color:red">Introduce un password valido</strong>';
                 }
             }
         ?>
