@@ -1,0 +1,3 @@
+Hola soy un archivo de texto 22,
+que tal estas?
+muy bien y tu****Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php********Soy un texto metodo desde php****
