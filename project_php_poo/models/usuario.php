@@ -42,7 +42,8 @@ class Usuario{
 
     function getPassword(){
         //con real_escape escapamos los datos
-        return $this->password;
+        //return $this->password;
+        return password_hash($this->db->real_escape_string($this->password),PASSWORD_BCRYPT,['cost'=>4]);
     }
 
     function getRol(){
@@ -70,7 +71,8 @@ class Usuario{
     }
 
     function setPassword($password){
-        $this->password=password_hash($this->db->real_escape_string($password),PASSWORD_BCRYPT,['cost'=>4]);
+        //$this->password=password_hash($this->db->real_escape_string($password),PASSWORD_BCRYPT,['cost'=>4]);
+        $this->password=$password;
     }
 
     function setRol($rol){
@@ -91,6 +93,37 @@ class Usuario{
         $result = false;
         if($save){
             $result= true;
+        }
+        return $result;
+    }
+
+    //metodo para el login
+    
+    public function login(){
+        $result = false;
+        $email = $this->email;
+        $password = $this->password;
+
+        //Comprobar si existe el usario
+        $sql = "SELECT * FROM usuarios WHERE email='$email';";
+        $login = $this->db->query($sql);
+
+        
+        
+
+        //si login da true y es igual a una fila..
+        if($login && $login->num_rows==1){
+            //sacar el objeto que nos da la base de datos
+            $usuario = $login->fetch_object();
+
+            //var_dump($usuario);
+            //die();
+            // Verificar la contraseña
+            $verify = password_verify($password, $usuario->password);
+            
+            if($verify){
+                $result = $usuario;
+            }
         }
         return $result;
     }

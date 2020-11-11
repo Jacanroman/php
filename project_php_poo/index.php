@@ -5,6 +5,7 @@ session_start();
 require_once 'autoload.php';
 //cargamos la base de datos
 require_once 'config/db.php';
+//cargamos los parametros
 require_once 'config/parameters.php';
 require_once 'views/layout/header.php';
 require_once 'views/layout/sidebar.php';
