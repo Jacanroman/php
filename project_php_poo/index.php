@@ -7,11 +7,13 @@ require_once 'autoload.php';
 require_once 'config/db.php';
 //cargamos los parametros
 require_once 'config/parameters.php';
+//cargamos los helpers
+require_once 'helpers/utils.php';
+
 require_once 'views/layout/header.php';
 require_once 'views/layout/sidebar.php';
 
-//cargamos los helpers
-require_once 'helpers/utils.php';
+
 
 
 function show_error(){
