@@ -2,7 +2,7 @@
     <h1>Editar producto   <?=$pro->nombre?></h1>
 
     <?php
-    $url_action = base_url."producto/edit&id=".$pro->id;
+    $url_action = base_url."producto/save&id=".$pro->id;
     ?>
 <?php else: ?>
     <h1>Crear Nuevo productos</h1>
@@ -41,7 +41,7 @@
 
     <label for="imagen">Imagen</label>
     <?php if(isset($pro) && is_object($pro) && !empty($pro->imagen)): ?>
-        <img src="<?base_url?>/uploads/<?=$pro->imagen?>" />
+        <img src="<?=base_url?>uploads/images/<?=$pro->imagen?>" class="thumb" />
     <?php endif; ?>   
     <input type="file" name="imagen" />
 
