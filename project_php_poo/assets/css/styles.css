@@ -302,6 +302,7 @@ button{
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
+    margin-bottom: 25px;
     
 }
 
@@ -311,7 +312,7 @@ button{
 }
 
 .product img{
-    width: 100px;
+    height: 130px;
     margin-bottom: 10px;
 }
 
