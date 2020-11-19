@@ -113,6 +113,14 @@ class Pedido{
         return $pedido->fetch_object();
     }
 
+    public function getAllByUser(){
+        $sql = "SELECT p.* FROM pedidos p " 
+            . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC";
+        $pedido = $this->db->query($sql);
+
+        return $pedido;
+    }
+
     public function getProductosByPedido($id){
         /*
         $sql = "SELECT * FROM productos WHERE id IN "
@@ -163,6 +171,22 @@ class Pedido{
         return $result;
 
     }
+
+
+    
+        public function edit(){
+            $sql = "UPDATE pedidos SET estado='{$this->getEstado()}' ";
+            $sql .= " WHERE id={$this->getId()};";
+            
+            $save = $this->db->query($sql);
+    
+            $result = false;
+            if($save){
+                $result= true;
+            }
+            return $result;
+        }
+    
 
     
 
